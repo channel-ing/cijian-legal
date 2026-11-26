@@ -7,7 +7,7 @@
 <style>
 :root{--bg:#fffaf5;--fg:#2d2926;--sub:#6b6560;--line:#eadfd3;--card:#fff;--link:#a8552c}
 @media (prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#ece6df;--sub:#a8a099;--line:#3a3430;--card:#262220;--link:#e8a77c}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","PingFang HK","PingFang TC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
 main{max-width:760px;margin:0 auto;padding:24px 18px 64px}
 h1{font-size:26px;line-height:1.35;margin:8px 0 12px}h2{font-size:20px;margin:34px 0 8px}h3{font-size:17px;margin:22px 0 6px}
 p,li{color:var(--fg)}li{margin:6px 0}a{color:var(--link);word-break:break-all}code{background:var(--card);padding:1px 5px;border-radius:4px}
@@ -58,6 +58,8 @@ footer{margin-top:48px;color:var(--sub);font-size:13px}
 </ul>
 <h3>4. 版本检查</h3>
 <p>应用启动或回到前台时，会向我们的服务器查询一次“最新版本号和下载地址”。这个请求只带平台和当前版本号，不带设备标识，也不带任何你的内容。连不上时会安静跳过，不影响使用。</p>
+<h3>4.1 服务器选择（开发者选项）</h3>
+<p>「设置 → 通知与提醒」里有一行「服务器」，默认连接官方服务器，普通用户不需要也不会用到。开发者可以输入只有开发者知道的密码，切换到开发者自己运营的测试服务器。切换时，如果后台推送开着，会先在原服务器上正常关闭并删除你在那里的数据，再按原来的开关在新服务器上重新开启。开发者服务器和官方服务器收集的信息范围、保存期限都一样，不会多收任何内容。</p>
 <h3>5. 导入旧版数据（可选）</h3>
 <p>如果你把旧版网页的数据导入本应用，你可以选择备份文件（.zip 或 .json），也可以选择从你自己的阿里云 OSS 导入。选择 OSS 导入时，手机会用你填写的存储桶名称、地区和访问密钥，<strong>直接</strong>从你自己的存储桶下载数据，不经过我们的服务器，我们没有访问权限；该过程只下载、不上传，也不会修改或删除你存储桶里的任何文件；你填写的密钥只保存在手机里，不会发给我们，也不会进入导出的备份文件。建议使用只有读取权限的访问密钥。</p>
 <h3>6. 你自己使用或配置的其他联网功能</h3>
@@ -67,6 +69,7 @@ footer{margin-top:48px;color:var(--sub);font-size:13px}
 <li><strong>字体链接</strong>：你添加网络字体或字体样式链接时，手机会请求这个网址（GitHub 上的链接会经 jsDelivr 加速）下载字体。</li>
 <li><strong>链接预览</strong>：你在聊天里发送网址时，手机会请求这个网址所在的网站，读取网页标题和图片。</li>
 <li><strong>音乐、电影院的网络链接</strong>：你添加网络音频或视频链接后，手机会向链接所在的服务器请求内容。</li>
+<li><strong>电影院里的哔哩哔哩（B 站）视频</strong>：你添加 B 站视频链接后，应用会在内置的网页视图里加载 B 站官方的播放器（player.bilibili.com）。这一过程由 B 站直接向你的手机提供内容，B 站可能按它自己的隐私政策处理访问信息；我们不会把你的任何数据发给 B 站。你不添加 B 站链接就不会发生。</li>
 <li><strong>添加链接时读取剪贴板</strong>：你打开「添加链接」对话框时，手机会读取剪贴板，识别其中的网址并预填。这个过程只在手机上进行，剪贴板内容不会上传。</li>
 <li><strong>应用内网页</strong>：打开网页时使用 iOS 系统自带的网页组件，适用该网站自己的隐私政策。</li>
 </ul>
